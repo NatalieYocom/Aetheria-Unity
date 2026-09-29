@@ -12,4 +12,8 @@ The project is under the planning phase. No development will be made in this sta
 
 [SECURITY.md](SECURITY.md)
 
+[STYLE.md](STYLE.md)
+
+[TRADEMARK.md](TRADEMARK.md)
+
 
