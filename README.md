@@ -9,6 +9,7 @@ The project is under the planning phase. No development will be made in this sta
 # Directory
 
 [BASIS.md](BASIS.md)
+
 [SECURITY.md](SECURITY.md)
 
 
