@@ -6,7 +6,9 @@ Current Status: PLANNING
 
 The project is under the planning phase. No development will be made in this stage.
 
-Original markdown file:
+# Directory
 
 [BASIS.md](BASIS.md)
+[SECURITY.md](SECURITY.md)
+
 
