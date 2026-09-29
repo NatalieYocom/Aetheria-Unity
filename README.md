@@ -5,6 +5,7 @@ This project is heavily under development. If you wish to become a developer, yo
 Current Status: PLANNING
 
 The project is under the planning phase. No development will be made in this stage.
+
 Original markdown file:
 
 [BASIS.md](BASIS.md)
