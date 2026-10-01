@@ -8,6 +8,7 @@ namespace Basis.Scripts.BasisSdk.Players
         public string URL;
         public string UnlockPassword;
         /// <summary>
+        /// Later add encryption, rather than basic string unlocking, easily bypassable.
         /// Opaque content-version tag for the bee at <see cref="URL"/>, letting a wearer say "same
         /// url, new bytes" so receivers invalidate their cache for content published to a static
         /// address. Appended after the original two-field format shipped — see
