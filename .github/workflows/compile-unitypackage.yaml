@@ -19,10 +19,10 @@ jobs:
           # Path inside the repository to package
           package-path: 'Packages/com.basis.sdk'
           # Desired output filename
-          output-path: 'BasisSDK.unitypackage'
+          output-path: 'AetheriaSDK.unitypackage'
 
       - name: Upload Package Artifact
         uses: actions/upload-artifact@v4
         with:
-          name: BasisSDK-unitypackage
-          path: BasisSDK.unitypackage
+          name: AetheriaSDK-unitypackage
+          path: AetheriaSDK.unitypackage
