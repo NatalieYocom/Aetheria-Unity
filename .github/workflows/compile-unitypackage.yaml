@@ -1,0 +1,46 @@
+name: Compile Unity Package
+
+on:
+  push:
+    branches:
+      - main
+    tags:
+      - 'v*' # Triggers on version tags (e.g., v1.0.0)
+  workflow_dispatch: # Allows you to trigger the build manually
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      # 1. Checkout the code from your repository
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+        with:
+          lfs: true
+
+      # 2. Compile specified files/folders into a .unitypackage
+      - name: Create Unitypackage
+        uses: natsuneko-laboratory/create-unitypackage@v3
+        with:
+          # Specify the exact files or folder path you want packaged
+          # Ensure you include your asset folders and their corresponding .meta files!
+          files: |
+            ./Assets/YourPackageFolder
+          dest: ./Builds/aetheriasdk.unitypackage
+
+      # 3. Upload the compiled .unitypackage as a GitHub artifact
+      - name: Upload Artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: Unity-Package
+          path: ./Builds/aetheriasdk.unitypackage
+
+      # 4. (Optional) Automatically attach to a Release if a tag is pushed
+      - name: Release Package
+        if: startsWith(github.ref, 'refs/tags/')
+        uses: softprops/action-gh-release@v2
+        with:
+          files: ./Builds/aetheriasdk.unitypackage
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
