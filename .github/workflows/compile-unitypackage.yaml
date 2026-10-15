@@ -1,22 +1,28 @@
 name: Compile SDK Package
 
-on: [push]
+on:
+  push:
+    branches:
+      - main
+  workflow_dispatch:
 
 jobs:
   export:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - name: Checkout repository
+        uses: actions/checkout@v4
 
-      - name: Export .unitypackage
-        uses: psubscry/extract-unity-package-action@v1.1
+      - name: Build .unitypackage
+        uses: pCYSlI/create-unitypackage@v1.3.0
         with:
-          project-path: '.'
+          # Path inside the repository to package
           package-path: 'Packages/com.basis.sdk'
-          output-path: 'Aetheria-SDK.unitypackage'
+          # Desired output filename
+          output-path: 'BasisSDK.unitypackage'
 
-      - name: Upload Artifact
+      - name: Upload Package Artifact
         uses: actions/upload-artifact@v4
         with:
-          name: AetheriaSDK-unitypackage
-          path: AetheriaSDK.unitypackage
+          name: BasisSDK-unitypackage
+          path: BasisSDK.unitypackage
