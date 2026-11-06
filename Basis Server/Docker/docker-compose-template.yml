@@ -1,0 +1,30 @@
+services:
+  aetheria-server:
+    build:
+      context: ../
+      dockerfile: Docker/Dockerfile
+    image: aetheria-server:latest
+    container_name: SERVERNAME
+    restart: unless-stopped
+    environment:
+      servername: SERVERNAME
+      public: false
+      groupinstance: false
+      groupid: GROUPID
+      userid: USERID
+      SetPort: 3000
+      HealthCheckPort: 2000
+      PromethusPort: 1000
+      Password: INSTANCEPASSWORD
+      PeerLimit: 1024
+      EnableStatistics: true
+      EnableConsole: false
+      # NetworkStackId: litenetlib,websocket
+    ports:
+      - "GAMEP:GAMEP/udp"
+      - "HEALTHP:HEALTHP/tcp"
+      - "MONITORP:MONITORP/tcp"
+    volumes:
+      - ./initialresources:/app/initialresources:ro
+      - ./config:/app/config
+      - ./storage:/app/storage
