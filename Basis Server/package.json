@@ -1,11 +1,11 @@
 {
-    "name": "com.basis.server",
+    "name": "com.aetheria.server",
     "version": "1.0.0",
-    "displayName": "Basis Server",
+    "displayName": "Aetheria Server",
     "description": "Core networking default works with litenetlib",
     "author": {
-        "name": "BasisVR",
-        "url": "https://github.com/BasisVR"
+        "name": "NatalieYocom",
+        "url": "https://github.com/NatalieYocom"
     },
     "license": "MIT",
     "vpmDependencies": {
