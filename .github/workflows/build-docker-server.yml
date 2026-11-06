@@ -9,8 +9,8 @@ on:
 
 env:
   REGISTRY: ghcr.io
-  IMAGE_NAME: ${{ github.repository_owner }}/basis-server
-  HEADLESS_IMAGE_NAME: ${{ github.repository_owner }}/basis-headless
+  IMAGE_NAME: ${{ github.repository_owner }}/aetheria-server
+  HEADLESS_IMAGE_NAME: ${{ github.repository_owner }}/aetheria-headless
 
 jobs:
   check-secret:
@@ -74,7 +74,7 @@ jobs:
         uses: docker/build-push-action@v5
         id: build
         with:
-          context: "./Basis Server"
+          context: "./Aetheria Server"
           file: "./Basis Server/Docker/Dockerfile"
           platforms: linux/amd64,linux/arm64
           push: true
